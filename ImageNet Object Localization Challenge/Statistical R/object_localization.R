@@ -15,7 +15,3 @@ install_tensorflow()
 sess = tf$Session()
 hello <- tf$constant('Hello, Jessie!')
 sess$run(hello)
-
-
-#TODO - Everything Else
-
