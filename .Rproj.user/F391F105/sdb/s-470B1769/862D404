@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#Image preprocessing steps\nlibrary(magick) #like image magick :)\n\n#init sample url\nurl <- \"http://farm4.static.flickr.com/3020/2755290967_ee3eb0444c.jpg\"\n\n#load image by url\nloaded_image <- image_read(url)\n#plot(loaded_image)\n\n#Resize image to standard size\nsized_image <- image_resize(loaded_image, \"250x250!\")\n#plot(sized_image)\n\n#Convert to grayscale.\ngray_image <- image_convert(sized_image, colorspace = \"gray\")\n#plot(gray_image)\n\n#TODO: build this into a function that reads in from a list of URLs\n#and then passes back image data\n\nprocess_image <- function(urlPath, resolution = \"250x250!\") {\n  loaded_image <- image_read(urlPath)\n  sized_image <- image_resize(loaded_image, resolution)\n  gray_image <- image_convert(sized_image, colorspace = \"gray\")\n  #write out image to some index\n}\n\nprocess_image(url)\n",
+    "created" : 1503976798856.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2314158979",
+    "id" : "862D404",
+    "lastKnownWriteTime" : 1504069491,
+    "last_content_update" : 1504069491428,
+    "path" : "~/Kaggle-Competitions---Data-Analysis/ImageNet Object Localization Challenge/Statistical R/image_preprocessing.R",
+    "project_path" : "ImageNet Object Localization Challenge/Statistical R/image_preprocessing.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
