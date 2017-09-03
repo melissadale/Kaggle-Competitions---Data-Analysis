@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#Get list of wnids\n#given the wnid of a sysnset, the list of urls is at\n#http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=[wnid]\n#ex wnid: Dog, domestic dog, Canis familiaris is n02084071\nlibrary(data.table)\nlibrary(readtext)\nlibrary(RCurl)\nlibrary(XML)\n\n#Read in url list for a given wnid.\n#Define a test synset - dog.\nwnid <- \"n02084071\"\nwnid_geturl_general <- \"http://www.image-net.org/api/text/imagenet.synset.geturls?wnid=\"\n\n#paste together sample url; in future throw wnid into a function for multiple wnids\nwnid_url <- paste0(wnid_geturl_general, wnid)\nimg_urls <- data.frame(read.table(wnid_url))\n\n#start with reading in small set of images to test function\ntest_urls <- head(img_urls)\n\n#TODO - this is reading test_urls as factors not strings, so the function\n#process_image can't download the image.  \n# for (i in 1:length(test_urls[,1])) {\n#   process_image(test_urls[i])\n#   plot(gray_image) #temp for now until you get it in function\n# }\n\n",
+    "created" : 1504051230336.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1613246427",
+    "id" : "FA4AE5A1",
+    "lastKnownWriteTime" : 1504069924,
+    "last_content_update" : 1504069924256,
+    "path" : "~/Kaggle-Competitions---Data-Analysis/ImageNet Object Localization Challenge/Statistical R/get_image_urls.R",
+    "project_path" : "ImageNet Object Localization Challenge/Statistical R/get_image_urls.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
